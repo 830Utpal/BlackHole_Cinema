@@ -77,3 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }, timeRunning);
     }
 });
+
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
+    if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-250px"; // Hide Sidebar
+    } else {
+        sidebar.style.left = "0px"; // Show Sidebar
+    }
+}
