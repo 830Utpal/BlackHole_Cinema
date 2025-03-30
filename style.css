@@ -27,3 +27,40 @@ header{
     justify-content: space-between;
     width: 400px;
   }
+  nav a{
+    text-decoration: none;
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 10px;
+    transition: 0.4s;
+    text-shadow: 0 5px 10px #0e1217;
+  }
+  
+  nav a:hover{
+    color: #901eca;
+  }
+  
+  .search-box{
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box img{
+    width: 20px;
+    background-color: lightgray;
+    padding: 5px 10px;
+    margin-right: -1px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .search-box input{
+    padding: 7.5px 30px;
+    background-color: lightgray;
+    border: none;
+    outline : none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
