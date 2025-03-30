@@ -45,26 +45,50 @@ header{
   .search-box{
     display: flex;
     align-items: center;
-  }
-  
-  .search-box img{
-    width: 20px;
-    background-color: lightgray;
-    padding: 5px 10px;
-    margin-right: -1px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 8px 15px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.search-box:hover{
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+}
+
+.search-box img{
+    width: 25px;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-box img:hover{
+    transform: scale(1.2);
+}
+
+.search-box input{
+    flex: 1;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.3);
     border: none;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  
-  .search-box input{
-    padding: 7.5px 30px;
-    background-color: lightgray;
-    border: none;
-    outline : none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
+    outline: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+.search-box input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+.search-box input:focus{
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
 /* carousel */
 .carousel{
     height: 100vh;
@@ -389,3 +413,54 @@ header{
       left: 15%;
     }
   }
+  h1 {
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    color: #fffbff;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+    opacity: 0;
+    animation: fadeInScale 1.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+h2 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
