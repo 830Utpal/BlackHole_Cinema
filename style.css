@@ -27,6 +27,7 @@ header{
     justify-content: space-between;
     width: 400px;
   }
+  
   nav a{
     text-decoration: none;
     color: lightgray;
@@ -38,7 +39,7 @@ header{
   }
   
   nav a:hover{
-    color: #901eca;
+    color: #ff0040;
   }
   
   .search-box{
@@ -64,7 +65,7 @@ header{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
-  /* carousel */
+/* carousel */
 .carousel{
     height: 100vh;
     margin-top: -70px;
@@ -143,4 +144,248 @@ header{
     margin-right: 10px;
     transition: 0.3s;
     cursor: pointer;
+  }
+  
+  .trailer-btn{
+    width: 150px;
+    padding: 12px 0;
+    border-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.753);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .trailer-btn:hover, .download-btn:hover{
+    opacity: 0.5;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.753);
+  }
+
+  .vid-box{
+    border: 5px solid #ca9b009c;
+    width: 250px;
+    height: 140px;
+    border-radius: 10px;
+    margin-top: 100px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(61, 61, 61, 0.733);
+  }
+
+  .vid-trailer{
+    width: 250px;
+    height: 140px;
+  }
+
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    background-color: rgba(59, 59, 59, 0.4);
+    backdrop-filter: blur(10px);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 0 0 25px #282828;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+    mix-blend-mode: lighten;
+}
+.thumbnail .item .thum-content{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    right: 10px;
+}
+.thumbnail .item .thum-content .title{
+    font-weight: 500;
+}
+.thumbnail .item .thum-content .description{
+    font-weight: 300;
+}
+/* arrows */
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 42%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(238, 238, 238, 0.87);
+    border: none;
+    color: #00000089;
+    font-size: 25px;
+    font-weight: bold;
+    transition: .5s;
+    cursor: pointer;
+}
+.arrows button:hover{
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.587);
+}
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list .item:nth-child(1) .content 
+{
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 100%;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 5px;
+    background-color: #ff0040;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 2s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 200;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 50px;
+    }
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+.carousel.prev .list .item:nth-child(2) .content 
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+      padding-right: 0;
+    }
+    .carousel .list .item .content h1{
+      font-size: 40px
+    }
+    .details p{
+      font-size: 17px;
+    }
+    .content h4{
+      margin: 10px 0;
+    }
+    .vid-box{
+      margin-top: 20px;
+    }
+    nav{
+      display: none
+    }
+    header {
+      padding: 0 10px;
+    }
+    .content{
+      top: 10%;
+    }
+    .thumbnail{
+      top: 75%;
+    }
+    .arrows{
+      left: 15%;
+    }
   }
