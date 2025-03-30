@@ -95,3 +95,52 @@ header{
     color: #fff;
     text-shadow: 0 5px 10px #0004;
 }
+.content h1{
+    font-weight: bold;
+    font-size: 65px;
+    text-wrap: nowrap;
+  }
+  
+  .details{
+    display: flex;
+    text-wrap: nowrap;
+    margin-bottom: -20px;
+  }
+  
+  .details p{
+    border-right: 2px solid #ffffff;
+    font-weight: bold;
+    font-size: 25px;
+    color: #ffcc00;
+    padding: 0 10px;
+  }
+  
+  .details p:last-child{
+    border-right: none;
+
+  }
+  
+  .content h4{
+    max-width: 400px;
+    font-size: 17px;
+    line-height: 25px;
+    margin: 40px 0;
+  }
+
+  .buttons{
+    display: flex;
+  }
+  
+  .download-btn{
+    width: 150px;
+    padding: 12px 0;
+    font-weight: bold;
+    border: none;
+    background-color:#efbf04;
+    color:#000000;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.753);
+    border-radius: 20px;
+    margin-right: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
