@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: Poppins;
+    font-size: 12px;
+}
+header{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: relative;
+    z-index: 100;
+    background-color: rgba(113, 113, 113, 0.139);
+    backdrop-filter: blur(5px);
+  }
+  
+  header h1{
+    font-size: 40px;
+    color: lightgray;
+  }
+  
+  nav{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+  }
