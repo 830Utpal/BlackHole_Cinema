@@ -9,19 +9,31 @@
 <body>
     <header data-aos="fade-down" data-aos-duration="2000">
         <h2><span style="color: #852dc9;">Black</span>hole</h2>
-        <nav>
-          <a href="#">Home</a>
-          <a href="#">Movie</a>
-          <a href="#">Anime</a>
-          <a href="#">series</a>
+    
+        <!-- Menu Icon for Mobile -->
+        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <span class="close-btn" onclick="toggleSidebar()">&#10006;</span>
+            <a href="#">Home</a>
+            <a href="#">Movie</a>
+            <a href="#">Anime</a>
+            <a href="#">Series</a>
+        </div>
+    
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Movie</a>
+            <a href="#">Anime</a>
+            <a href="#">Series</a>
         </nav>
-  
+    
         <div class="search-box">
-          <img src="image/search.png" alt="search-icon">
-          <input type="text" name="Search" placeholder="search">
+            <img src="image/search.png" alt="search-icon">
+            <input type="text" name="Search" placeholder="search">
         </div>
     </header>
-
     <!-- carousel -->
     <div class="carousel">
         <!-- list item -->
